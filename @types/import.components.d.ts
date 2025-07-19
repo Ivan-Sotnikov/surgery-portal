@@ -10,6 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     AboutPage: typeof import('./../src/pages/AboutPage/AboutPage.vue')['default']
     AppointmentPage: typeof import('./../src/pages/AppointmentPage/AppointmentPage.vue')['default']
+    CInformationCard: typeof import('./../src/components/CInformationCard.vue')['default']
     ContactsPage: typeof import('./../src/pages/ContactsPage/ContactsPage.vue')['default']
     DefaultFooter: typeof import('./../src/layouts/DefaultFooter/DefaultFooter.vue')['default']
     DefaultLayout: typeof import('./../src/layouts/DefaultLayout/DefaultLayout.vue')['default']
@@ -25,7 +26,7 @@ declare module 'vue' {
     PlasticMamoPage: typeof import('./../src/pages/PlasticPage/PlasticMamoPage/PlasticMamoPage.vue')['default']
     PlasticPage: typeof import('./../src/pages/PlasticPage/PlasticPage.vue')['default']
     PortfolioPage: typeof import('./../src/pages/PortfolioPage/PortfolioPage.vue')['default']
-    PrepareOperationPage: typeof import('./../src/pages/PrepareOperationPage/PrepareOperationPage.vue')['default']
+    PrepareOperationPage: typeof import('./../src/pages/PlasticPage/PrepareOperationPage/PrepareOperationPage.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

@@ -63,7 +63,7 @@ const router = createRouter({
           meta: <RouteMeta>{
             title: 'Подготовка к операции'
           },
-          component: () => import('@/pages/PrepareOperationPage/PrepareOperationPage.vue')
+          component: () => import('@/pages/PlasticPage/PrepareOperationPage/PrepareOperationPage.vue')
         }
       ]
     },

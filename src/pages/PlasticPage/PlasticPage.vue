@@ -2,13 +2,22 @@
 import { navBarButtons } from '@/constants'
 
 const navButtons = navBarButtons.find(item => item.name == 'plastic')?.navButtonsList
+
+const display = useDisplay()
 </script>
 
 <template>
   <div>
-    <VTabs>
-      <VTab v-for="(button, key) in navButtons" :key="key" :to="{ name: button.name }">{{ button.title }}</VTab>
-    </VTabs>
+    <div class="d-flex justify-space-between mt-5" v-if="display.mdAndUp.value">
+      <VBtn
+        v-for="(button, key) in navButtons"
+        :key="key"
+        :to="{ name: button.name }"
+        :text="button.title"
+        variant="text"
+      />
+    </div>
+    <VDivider />
     <RouterView v-slot="{ Component }">
       <Transition name="fade" appear mode="out-in">
         <component :is="Component" />
