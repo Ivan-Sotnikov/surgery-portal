@@ -6,7 +6,9 @@ const navButtons = navBarButtons.find(item => item.name == 'plastic')?.navButton
 
 <template>
   <div>
-    <VBtn v-for="(button, key) in navButtons" :key="key" :to="{ name: button.name }" :text="button.title" />
+    <VTabs>
+      <VTab v-for="(button, key) in navButtons" :key="key" :to="{ name: button.name }">{{ button.title }}</VTab>
+    </VTabs>
     <RouterView v-slot="{ Component }">
       <Transition name="fade" appear mode="out-in">
         <component :is="Component" />

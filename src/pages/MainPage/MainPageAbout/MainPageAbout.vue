@@ -1,26 +1,31 @@
 <script setup lang="ts">
 import doctorImage from './assets/main_Image.png'
+import doctorFace from './assets/25_resized.png'
+
+const dipslay = useDisplay()
 </script>
 
 <template>
   <VContainer>
     <VRow class="align-center">
-      <VCol order="2" order-sm="1"><VImg :src="doctorImage" /></VCol>
+      <VCol order="2" order-sm="1" class="d-flex flex-column">
+        <VImg :src="doctorImage" /> <VImg :src="doctorFace" v-if="dipslay.sm.value" />
+      </VCol>
       <VCol cols="12" sm="7" order="1" order-sm="2">
         <div class="text-h5">
           Добро пожаловать на сайт <br />
           пластического хирурга высшей категории.
         </div>
-        <div class="text-h6 mt-6">
+        <div class="text-md-h6 mt-6 text-justify">
           Мое призвание состоит в преображении жизни пациентов посредством искусства эстетической медицины. За моими
           плечами многолетний опыт успешных хирургических вмешательств, постоянное совершенствование профессиональных
           навыков и владение передовыми методами коррекции внешности.
         </div>
-        <div class="text-h6 mt-4">
+        <div class="text-md-h6 mt-4 text-justify">
           Пластическая хирургия здесь воспринимается не просто как медицинская практика, а как возможность подарить
           каждому человеку уверенность в себе и радость видеть собственное отражение
         </div>
-        <div class="text-h6 mt-4">
+        <div class="text-md-h6 mt-4 text-justify">
           Результаты проведенных операций представлены в специальном разделе, позволяя убедиться в качестве нашей работы
           лично. Записаться на консультацию можно прямо на сайте либо позвонив по указанному телефону. Я ценю доверие
           своих пациентов и готов предложить лучший сервис и высокое качество услуг, делая красоту доступной каждому.

@@ -1,26 +1,29 @@
 <script setup lang="ts"></script>
 
 <template>
-  <VApp class="">
+  <VApp>
     <DefaultLayout>
-      <RouterView v-slot="{ Component }">
-        <Transition appear mode="out-in">
-          <component :is="Component" :key="$route.fullPath" />
+      <RouterView v-slot="{ Component, route }">
+        <Transition appear mode="out-in" :name="'main'">
+          <VContainer v-if="route.meta.isContainer">
+            <Transition appear mode="out-in" :name="'main'"> <component :is="Component" /> </Transition>
+          </VContainer>
+          <component v-else :is="Component" />
         </Transition>
       </RouterView>
     </DefaultLayout>
-    <DefaultFooter class="flex-grow-0" />
+    <DefaultFooter />
   </VApp>
 </template>
 
 <style>
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 1s ease;
+.main-enter-active,
+.main-leave-active {
+  transition: opacity 0.7s ease;
 }
 
-.v-enter-from,
-.v-leave-to {
+.main-enter-from,
+.main-leave-to {
   opacity: 0;
 }
 </style>

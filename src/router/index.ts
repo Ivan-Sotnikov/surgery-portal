@@ -6,9 +6,9 @@ interface RouteMeta extends Record<symbol | string, unknown> {
 
 declare module 'vue-router' {
   interface RouteMeta {
-    title: string
+    title?: string
     footer?: boolean
-    isFluidContainer?: boolean
+    isContainer?: boolean
   }
 }
 
@@ -20,7 +20,7 @@ const router = createRouter({
       name: 'main',
       meta: <RouteMeta>{
         title: 'Пластический хируг',
-        isFluidContainer: true
+        isContainer: false
       },
       component: () => import('@/pages/MainPage/MainPage.vue')
     },
@@ -29,6 +29,9 @@ const router = createRouter({
       name: 'plastic',
       redirect: { name: 'plastic/body' },
       component: () => import('@/pages/PlasticPage/PlasticPage.vue'),
+      meta: {
+        isContainer: true
+      },
       children: [
         {
           path: 'body',
@@ -53,6 +56,14 @@ const router = createRouter({
             title: 'Пластика груди'
           },
           component: () => import('@/pages/PlasticPage/PlasticMamoPage/PlasticMamoPage.vue')
+        },
+        {
+          path: 'preparation',
+          name: 'plastic/preparation',
+          meta: <RouteMeta>{
+            title: 'Подготовка к операции'
+          },
+          component: () => import('@/pages/PrepareOperationPage/PrepareOperationPage.vue')
         }
       ]
     },
@@ -61,38 +72,40 @@ const router = createRouter({
       path: '/portfolio',
       name: 'portfolio',
       meta: <RouteMeta>{
-        title: 'Мои работы'
+        title: 'Мои работы',
+        isContainer: true
       },
       component: () => import('@/pages/PortfolioPage/PortfolioPage.vue')
     },
     {
-      path: '/preparation',
-      name: 'preparation',
+      path: '/appointment',
+      name: 'appointment',
       meta: <RouteMeta>{
-        title: 'Подготовка к операции'
+        title: 'Запись на прием',
+        isContainer: true
       },
-      component: () => import('@/pages/PrepareOperationPage/PrepareOperationPage.vue')
+      component: () => import('@/pages/AppointmentPage/AppointmentPage.vue')
     },
     {
       path: '/contacts',
       name: 'contacts',
-      meta: <RouteMeta>{
-        title: 'Контакты',
-        footer: false
-      },
-      component: () => import('@/pages/ContactsPage/ContactsPage.vue')
+      redirect: { name: 'appointment' }
     },
     {
       path: '/about',
       name: 'about',
       meta: <RouteMeta>{
-        title: 'Обо мне'
+        title: 'Обо мне',
+        isContainer: true
       },
       component: () => import('@/pages/AboutPage/AboutPage.vue')
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'Страница не найдена',
+      meta: {
+        isContainer: true
+      },
       component: () => import('@/pages/NotFoundPage/NotFoundPage.vue')
     }
   ]

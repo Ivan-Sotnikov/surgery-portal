@@ -1,22 +1,33 @@
 <script setup lang="ts">
-import leftImage from './assets/26_resized.png'
-import rightImage from './assets/25_resized.png'
+import testImage from './assets/65_resized_trim.png'
+
+const display = useDisplay()
+const titleTopPosition = computed(
+  () => `top: ${display.lgAndUp.value ? 50 : display.mdAndUp.value ? 90 : display.smAndUp.value ? 50 : 20}px`
+)
 </script>
 
 <template>
-  <VRow class="align-center" no-gutters>
-    <VCol><VImg cover :src="leftImage" alt="left image" /></VCol>
-
-    <VCol>
-      <Transition appear name="name">
-        <div class="text-h1 font-weight-regular">Грант Григорян</div>
-      </Transition>
-      <Transition appear name="plastic">
-        <div class="text-h4 mt-4">Пластический хирург</div>
-      </Transition>
-    </VCol>
-    <VCol><VImg cover :src="rightImage" alt="right image" /></VCol>
-  </VRow>
+  <VImg :src="testImage" max-height="500" cover>
+    <Transition appear name="name">
+      <div
+        class="text-lg-h1 text-md-h2 text-sm-h3 text-h5 font-weight-regular text-black"
+        style="position: relative; left: 35%"
+        :style="titleTopPosition"
+      >
+        Грант Григорян
+      </div>
+    </Transition>
+    <Transition appear name="plastic">
+      <div
+        class="text-lg-h4 text-md-h6 text-sm-h6 text-body-1 mt-2 mt-sm-4 text-black"
+        style="position: relative; left: 35%"
+        :style="titleTopPosition"
+      >
+        Пластический хирург
+      </div>
+    </Transition>
+  </VImg>
 </template>
 
 <style>

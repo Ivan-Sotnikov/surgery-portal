@@ -46,7 +46,7 @@ const currentPageName = computed(() => {
 </script>
 
 <template>
-  <VAppBar :color="sessionStorageTheme == 'light' ? 'grey-lighten-3' : undefined">
+  <VAppBar color="secondary">
     <template v-if="display.lgAndUp.value">
       <div class="w-100 d-flex justify-center">
         <div class="d-flex justify-space-around align-center px-10" :class="navBarButtonsWidth">
@@ -144,8 +144,7 @@ const currentPageName = computed(() => {
       </div>
     </template>
   </VAppBar>
-  <VMain>
-    <VContainer v-if="!$route.meta.isFluidContainer"><slot /></VContainer>
-    <slot v-else-if="$route.meta.isFluidContainer" />
+  <VMain class="bg-primary">
+    <slot />
   </VMain>
 </template>

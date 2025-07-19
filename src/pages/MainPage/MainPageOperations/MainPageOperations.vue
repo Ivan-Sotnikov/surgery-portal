@@ -41,23 +41,19 @@ const operationButtons: Array<OperationButton> = [
 
 <template>
   <VContainer>
-    <div class="text-h2 text-center font-weight-regular mt-5 mb-12">Пластические операции</div>
+    <div class="text-h4 text-sm-h2 text-center font-weight-regular mt-5 mb-12">Пластические операции</div>
     <VLazy transition="mainPageBlock" :options="{ threshold: 1 }">
       <VRow>
-        <VCol v-for="(card, key) in operationButtons" :key="key" cols="12" md="4" class="pa-8">
+        <VCol v-for="(card, key) in operationButtons" :key="key" cols="12" md="4" class="pa-8 justify-center d-flex">
           <VHover>
             <template v-slot:default="{ isHovering, props }">
-              <VCard
-                :to="card.to"
-                class="text-center"
-                v-bind="props"
-                :class="isHovering && 'elevation-10'"
-                min-width="240"
-                max-width="400"
-              >
+              <VCard :to="card.to" class="text-center" v-bind="props" :class="isHovering && 'elevation-10'" width="400">
                 <VImg :src="card.image" :alt="card.title" class="d-flex align-center justify-center">
-                  <Transition>
-                    <div class="text-h6 ma-4 bg-grey-lighten-3 elevation-10 text-uppercase pa-4" v-if="isHovering">
+                  <Transition name="slide-x-reverse-transition">
+                    <div
+                      class="text-h6 ma-4 bg-grey-lighten-3 elevation-10 text-uppercase pa-4"
+                      v-if="isHovering && display.mdAndUp.value"
+                    >
                       <div v-for="(item, itemKey) in card.subtitleArray" :key="itemKey" class="ma-4">{{ item }}</div>
                     </div>
                   </Transition>

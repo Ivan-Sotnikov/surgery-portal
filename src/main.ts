@@ -4,6 +4,8 @@ import { createPinia } from 'pinia'
 import App from './App/App.vue'
 import router from './router'
 
+import colors from 'vuetify/util/colors'
+
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
@@ -18,6 +20,24 @@ const vuetify = createVuetify({
     aliases,
     sets: {
       mdi
+    }
+  },
+  theme: {
+    themes: {
+      light: {
+        colors: {
+          primary: colors.grey.lighten4,
+          secondary: colors.grey.lighten3,
+          tertiary: colors.grey.lighten2
+        }
+      },
+      dark: {
+        colors: {
+          primary: colors.grey.darken4,
+          secondary: colors.grey.darken3,
+          tertiary: colors.grey.darken2
+        }
+      }
     }
   }
 })

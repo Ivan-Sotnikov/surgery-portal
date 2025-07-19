@@ -12,6 +12,17 @@ export interface ContactInfo {
   type: 'phone' | 'email' | 'instagramm' | 'telegram' | 'whatsapp' | 'vk'
   icon?: string
   title: string
-  value: string
+  value?: string
   qrImage?: string
+}
+
+export interface MainCredentialsInterface {
+  phone: string
+  normalizedPhone?: string
+  email?: string
+  telegram?: string
+  instagramm?: string
+  whatsapp?: string
+  vk?: string
+  address: string
 }
