@@ -1,7 +1,5 @@
-<script setup lang="ts"></script>
-
 <template>
-  <VApp>
+  <VApp ref="app">
     <DefaultLayout>
       <RouterView v-slot="{ Component, route }">
         <Transition appear mode="out-in" :name="'main'">

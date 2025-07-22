@@ -1,11 +1,12 @@
 <script lang="ts" setup>
 import { navBarButtons } from '@/constants'
 import type { MenuNavButton } from '@/types'
-import { mdiChevronDown, mdiMenu, mdiWeatherNight, mdiWhiteBalanceSunny } from '@mdi/js'
+import { mdiChevronDown, mdiChevronUp, mdiMenu, mdiWeatherNight, mdiWhiteBalanceSunny } from '@mdi/js'
 
-import { useTheme } from 'vuetify'
+import { useGoTo, useTheme } from 'vuetify'
 
 import { syncRefs, useStorage } from '@vueuse/core'
+import { useScroll } from 'vuetify/lib/composables/scroll.mjs'
 
 const { global } = useTheme()
 
@@ -43,6 +44,10 @@ const currentPageName = computed(() => {
   findCurrentNavButton(navBarButtons)
   return pageTitle.value
 })
+
+const { currentScroll } = useScroll({})
+const goTo = useGoTo()
+const isToUpButtonVisible = computed(() => display.smAndDown.value && currentScroll.value > 100)
 </script>
 
 <template>
@@ -146,5 +151,12 @@ const currentPageName = computed(() => {
   </VAppBar>
   <VMain class="bg-primary">
     <slot />
+    <VBtn
+      :icon="mdiChevronUp"
+      position="fixed"
+      style="bottom: 20px; left: 20px; z-index: 1"
+      v-if="isToUpButtonVisible"
+      @click="goTo(0, { duration: 500 })"
+    />
   </VMain>
 </template>

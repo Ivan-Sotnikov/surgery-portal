@@ -14,7 +14,7 @@ defineProps<{ content: InformationCardContent }>()
 </script>
 
 <template>
-  <VCard rounded="xl" border="md">
+  <div class="rounded-xl" style="overflow: hidden">
     <VRow dense class="d-flex align-center" :class="content.orientation == 'end' ? 'justify-end' : undefined">
       <VCol cols="12" sm="4" xl="3" xxl="2" class="ma-0 pa-0" :order-sm="content.orientation == 'end' ? 2 : undefined">
         <video
@@ -51,5 +51,5 @@ defineProps<{ content: InformationCardContent }>()
         </VCardText>
       </VCol>
     </VRow>
-  </VCard>
+  </div>
 </template>
