@@ -23,7 +23,9 @@ export const navBarButtons: Array<MenuNavButton> = [
 class MainCredetials implements MainCredentialsInterface {
   phone: string
   email: string
-  address: string
+  addressKMV: string
+  addressMoscow: string
+  addressKrasnodar: string
   vk?: string | undefined
   telegram?: string | undefined
   whatsapp?: string | undefined
@@ -32,7 +34,9 @@ class MainCredetials implements MainCredentialsInterface {
   constructor() {
     this.phone = '89179829558'
     this.normalizedPhone = this.phone.replace(/8(\d{3})(\d{3})(\d{2})(\d{2})$/, '+7 ($1) $2-$3-$4')
-    this.address = 'Ставропольский край, Минеральные Воды, Советская улица, 61'
+    this.addressKMV = 'Ставропольский край, Минеральные Воды, Советская улица, 61'
+    this.addressMoscow = 'г.Москва, Кремль'
+    this.addressKrasnodar = 'Краснодар, ул.Пушкина, д.Колотушкина'
     this.email = 'grantik@mail.ru'
   }
 }

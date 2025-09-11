@@ -1,4 +1,4 @@
-import type { InformationCardContent } from '@/components/CInformationCard.vue'
+import type { InformationCardContent } from '@/components/CInformationCard/CInformationCard.vue'
 import doctorImage from '../assets/22_resized.jpg'
 import educationMainImage from '../assets/13_resized.jpg'
 import aimMainImage from '../assets/43_resized.jpg'

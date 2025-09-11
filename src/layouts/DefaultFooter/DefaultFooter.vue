@@ -53,7 +53,7 @@ const textColor = computed(() => (themeGlobal.name.value == 'light' ? 'text-blac
         >
       </VCol>
     </VRow>
-    <div class="mt-10 d-flex align-center flex-column flex-md-row">
+    <div class="mt-md-10 d-flex align-center flex-column flex-md-row">
       <VBtn
         :href="`mailto:${mainCredentials.email}`"
         :class="textColor"
@@ -72,6 +72,6 @@ const textColor = computed(() => (themeGlobal.name.value == 'light' ? 'text-blac
         :text="mainCredentials.normalizedPhone"
       />
     </div>
-    <div style="position: absolute; bottom: 0; right: 0">© 2025</div>
+    <div style="position: absolute; bottom: 10px; right: 10px">© 2025</div>
   </VFooter>
 </template>

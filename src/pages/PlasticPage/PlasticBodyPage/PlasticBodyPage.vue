@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { InformationCardContent } from '@/components/CInformationCard.vue'
+import type { InformationCardContent } from '@/components/CInformationCard/CInformationCard.vue'
 import bodyImage_1 from './assets/29_resized.jpg'
 import bodyImage_2 from './assets/85_resized.jpg'
-import CInformationCard from '@/components/CInformationCard.vue'
+import CInformationCard from '@/components/CInformationCard/CInformationCard.vue'
 
 const sliderItems = [
   { image: bodyImage_1 },
@@ -31,7 +31,7 @@ const cardsContentArray: Array<InformationCardContent> = [
 </script>
 
 <template>
-  <div class="mt-4 mt-md-10">
+  <div class="my-2 my-md-15">
     <CInformationCard :content="cardsContentArray[0]" />
     <VSlideGroup class="my-4 my-md-10">
       <VSlideGroupItem v-for="(item, key) in sliderItems" :key="key">

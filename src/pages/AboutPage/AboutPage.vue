@@ -38,9 +38,9 @@ const carouselItems: Array<CarouselItem> = [
     <template v-for="(item, key) in contentArray" :key="key">
       <CInformationCard :content="item.card" />
       <div class="text-md-h4 text-lg-h3 text-sm-h6 my-md-16 my-6 my-sm-10 font-italic text-center">
-        <VDivider />
+        <VDivider class="my-4 my-md-10" />
         <div v-html="item.quoute" />
-        <VDivider />
+        <VDivider class="my-4 my-md-10" />
       </div>
     </template>
     <VCarousel class="mt-10 border-md rounded-xl" hide-delimiters cycle interval="4000">

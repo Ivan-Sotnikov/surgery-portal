@@ -24,5 +24,7 @@ export interface MainCredentialsInterface {
   instagramm?: string
   whatsapp?: string
   vk?: string
-  address: string
+  addressKMV: string
+  addressMoscow: string
+  addressKrasnodar: string
 }

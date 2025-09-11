@@ -10,7 +10,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     AboutPage: typeof import('./../src/pages/AboutPage/AboutPage.vue')['default']
     AppointmentPage: typeof import('./../src/pages/AppointmentPage/AppointmentPage.vue')['default']
-    CInformationCard: typeof import('./../src/components/CInformationCard.vue')['default']
+    CFrequentlyAskedQuestions: typeof import('./../src/components/CFrequentlyAskedQuestions/CFrequentlyAskedQuestions.vue')['default']
+    CInformationCard: typeof import('./../src/components/CInformationCard/CInformationCard.vue')['default']
     ContactsPage: typeof import('./../src/pages/ContactsPage/ContactsPage.vue')['default']
     DefaultFooter: typeof import('./../src/layouts/DefaultFooter/DefaultFooter.vue')['default']
     DefaultLayout: typeof import('./../src/layouts/DefaultLayout/DefaultLayout.vue')['default']
@@ -20,6 +21,7 @@ declare module 'vue' {
     MainPageCarousel: typeof import('./../src/pages/MainPage/MainPageCarousel/MainPageCarousel.vue')['default']
     MainPageContacts: typeof import('./../src/pages/MainPage/MainPageContacts/MainPageContacts.vue')['default']
     MainPageOperations: typeof import('./../src/pages/MainPage/MainPageOperations/MainPageOperations.vue')['default']
+    MainPageTimeline: typeof import('./../src/pages/MainPage/MainPageTimeline/MainPageTimeline.vue')['default']
     NotFoundPage: typeof import('./../src/pages/NotFoundPage/NotFoundPage.vue')['default']
     PlasticBodyPage: typeof import('./../src/pages/PlasticPage/PlasticBodyPage/PlasticBodyPage.vue')['default']
     PlasticFacePage: typeof import('./../src/pages/PlasticPage/PlasticFacePage/PlasticFacePage.vue')['default']

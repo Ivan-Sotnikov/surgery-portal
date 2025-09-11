@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import type { InformationCardContent } from '@/components/CInformationCard.vue'
+import type { InformationCardContent } from '@/components/CInformationCard/CInformationCard.vue'
 import mammoVideo from './assets/v01.mp4'
 import mammoImage_1 from './assets/63_resized.jpg'
 import mammoImage_2 from './assets/70_resized.jpg'
-import CInformationCard from '@/components/CInformationCard.vue'
+import CInformationCard from '@/components/CInformationCard/CInformationCard.vue'
 
 const sliderItems = [
   { image: mammoImage_2 },
@@ -18,7 +18,8 @@ const cardsContentArray: Array<InformationCardContent> = [
   {
     video: mammoVideo,
     title: 'Пластика груди',
-    text: 'Маммопластика — одна из наиболее востребованных процедур в современной эстетической медицине. Она позволяет изменить размер, форму и положение молочных желез, помогая женщинам чувствовать себя уверенно и комфортно в собственном теле.'
+    text: 'Маммопластика — одна из наиболее востребованных процедур в современной эстетической медицине. Она позволяет изменить размер, форму и положение молочных желез, помогая женщинам чувствовать себя уверенно и комфортно в собственном теле.',
+    orientation: 'start'
   },
   {
     image: mammoImage_1,
@@ -31,8 +32,8 @@ const cardsContentArray: Array<InformationCardContent> = [
 </script>
 
 <template>
-  <div class="mt-4 mt-md-10">
-    <CInformationCard :content="cardsContentArray[0]" />
+  <div>
+    <CInformationCard :content="cardsContentArray[0]" class="my-2 my-md-15" />
     <VSlideGroup class="my-6 my-md-16">
       <VSlideGroupItem>
         <div style="overflow: hidden" class="rounded-xl">

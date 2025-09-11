@@ -28,14 +28,16 @@ const vuetify = createVuetify({
         colors: {
           primary: colors.grey.lighten4,
           secondary: colors.grey.lighten3,
-          tertiary: colors.grey.lighten2
+          tertiary: colors.grey.lighten2,
+          quaternary: colors.grey.darken4
         }
       },
       dark: {
         colors: {
           primary: colors.shades.black,
           secondary: colors.grey.darken3,
-          tertiary: colors.grey.darken2
+          tertiary: colors.grey.darken2,
+          quaternary: colors.grey.lighten4
         }
       }
     }

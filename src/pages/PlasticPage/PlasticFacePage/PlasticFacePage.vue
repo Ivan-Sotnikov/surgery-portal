@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { InformationCardContent } from '@/components/CInformationCard.vue'
+import type { InformationCardContent } from '@/components/CInformationCard/CInformationCard.vue'
 import faceImage_1 from './assets/33_resized.jpg'
 import faceImage_2 from './assets/67_resized.jpg'
-import CInformationCard from '@/components/CInformationCard.vue'
+import CInformationCard from '@/components/CInformationCard/CInformationCard.vue'
 
 const sliderItems = [
   { image: faceImage_1 },
@@ -18,7 +18,8 @@ const cardsContentArray: Array<InformationCardContent> = [
     image: faceImage_1,
     imageAlt: 'Исследование лица',
     title: 'Пластика лица',
-    text: 'Молодость и свежесть лица — мечта многих женщин и мужчин. Современные технологии позволяют эффективно бороться с возрастными изменениями, устраняя морщины, подтягивая кожу и восстанавливая четкость овала лица.'
+    text: 'Молодость и свежесть лица — мечта многих женщин и мужчин. Современные технологии позволяют эффективно бороться с возрастными изменениями, устраняя морщины, подтягивая кожу и восстанавливая четкость овала лица.',
+    orientation: 'start'
   },
   {
     image: faceImage_2,
@@ -31,7 +32,7 @@ const cardsContentArray: Array<InformationCardContent> = [
 </script>
 
 <template>
-  <div class="mt-4 mt-md-10">
+  <div class="my-2 my-md-15">
     <CInformationCard :content="cardsContentArray[0]" />
     <VSlideGroup class="my-4 my-md-10">
       <VSlideGroupItem v-for="(item, key) in sliderItems" :key="key">

@@ -2,6 +2,7 @@
 import { navBarButtons } from '@/constants'
 import type { MenuNavButton } from '@/types'
 import { mdiChevronDown, mdiChevronUp, mdiMenu, mdiWeatherNight, mdiWhiteBalanceSunny } from '@mdi/js'
+import logoImage from '../../assets/Logo.svg'
 
 import { useGoTo, useTheme } from 'vuetify'
 
@@ -90,7 +91,13 @@ const isToUpButtonVisible = computed(() => display.smAndDown.value && currentScr
     </template>
     <template v-else>
       <div class="w-100 d-flex justify-end align-center">
-        <div class="text-h5">{{ currentPageName }}</div>
+        <template v-if="$route.name != 'main'">
+          <RouterLink :to="{ name: 'main' }" class="ml-3">
+            <VImg :src="logoImage" width="36" />
+          </RouterLink>
+          <VSpacer />
+        </template>
+        <div class="text-h5 text-end">{{ currentPageName }}</div>
         <VMenu :close-on-content-click="false">
           <template v-slot:activator="{ props }">
             <VBtn :icon="mdiMenu" v-bind="props" />
