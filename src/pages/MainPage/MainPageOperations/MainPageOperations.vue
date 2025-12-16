@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { RouteLocationRaw } from 'vue-router'
-import bodyPlasticImg from './assets/body_plastic.png'
-import facePlasticImg from './assets/face_plastic.png'
-import mammoPlasticImg from './assets/mammo_plastic.png'
+import bodyPlasticImg from './assets/body_plastic.jpg'
+import facePlasticImg from './assets/face_plastic.jpg'
+import mammoPlasticImg from './assets/mammo_plastic.jpg'
 
 interface OperationButton {
   image: string

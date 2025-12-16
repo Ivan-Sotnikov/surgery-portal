@@ -1,5 +1,5 @@
 import type { InformationCardContent } from '@/components/CInformationCard/CInformationCard.vue'
-import preparationImage1 from '../assets/23_resized.jpg'
+import preparationImage1 from '../assets/23_resized.jpeg'
 import preparationVideo1 from '../assets/v07.mp4'
 import type { Question } from '@/components/CFrequentlyAskedQuestions/CFrequentlyAskedQuestions.vue'
 

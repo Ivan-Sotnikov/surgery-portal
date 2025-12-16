@@ -28,22 +28,19 @@ const locations: Array<Location> = [
     title: 'Москва',
     value: 'moscow',
     adress: mainCredentials.addressMoscow,
-    mapIFrameLink:
-      'https://yandex.ru/map-widget/v1/?ll=43.126788%2C44.189063&mode=search&oid=167351408524&ol=biz&source=serp_navig&z=15.01'
+    mapIFrameLink: mainCredentials.mapLinkMoscow
   },
   {
     title: 'Краснодар',
-    value: 'kmv',
+    value: 'krasnodar',
     adress: mainCredentials.addressKMV,
-    mapIFrameLink:
-      'https://yandex.ru/map-widget/v1/?ll=43.126788%2C44.189063&mode=search&oid=167351408524&ol=biz&source=serp_navig&z=15.01'
+    mapIFrameLink: mainCredentials.mapLinkKrasnodar
   },
   {
     title: 'Минеральные воды',
-    value: 'krasnodar',
+    value: 'kmv',
     adress: mainCredentials.addressKrasnodar,
-    mapIFrameLink:
-      'https://yandex.ru/map-widget/v1/?ll=43.126788%2C44.189063&mode=search&oid=167351408524&ol=biz&source=serp_navig&z=15.01'
+    mapIFrameLink: mainCredentials.mapLinkKMV
   }
 ]
 </script>

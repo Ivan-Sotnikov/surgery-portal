@@ -1,6 +1,7 @@
-import type { ContactInfo, MainCredentialsInterface, MenuNavButton } from '@/types'
-import { mdiEmailOutline, mdiInstagram, mdiWhatsapp } from '@mdi/js'
-import telegramIcon from '../layouts/DefaultFooter/assets/telegram_logo.ts'
+import type { MenuNavButton } from '@/types'
+
+import telegramQR from '../layouts/DefaultFooter/assets/t_me-plastic_grant.jpg'
+import instagrammQR from '../layouts/DefaultFooter/assets/IMG_3189.jpg'
 
 export const navBarButtons: Array<MenuNavButton> = [
   { name: 'main', title: 'Главная страница' },
@@ -20,58 +21,43 @@ export const navBarButtons: Array<MenuNavButton> = [
   { name: 'appointment', title: 'Запись на консультацию' }
 ]
 
-class MainCredetials implements MainCredentialsInterface {
+export interface MainCredentials {
   phone: string
-  email: string
-  addressKMV: string
-  addressMoscow: string
-  addressKrasnodar: string
-  vk?: string | undefined
-  telegram?: string | undefined
-  whatsapp?: string | undefined
-  instagramm?: string | undefined
   normalizedPhone: string
-  constructor() {
-    this.phone = '89179829558'
-    this.normalizedPhone = this.phone.replace(/8(\d{3})(\d{3})(\d{2})(\d{2})$/, '+7 ($1) $2-$3-$4')
-    this.addressKMV = 'Ставропольский край, Минеральные Воды, Советская улица, 61'
-    this.addressMoscow = 'г.Москва, Кремль'
-    this.addressKrasnodar = 'Краснодар, ул.Пушкина, д.Колотушкина'
-    this.email = 'grantik@mail.ru'
-  }
+  email: string
+  telegramLink: string
+  telegramQr: string
+  instagrammLink: string
+  instagrammQr: string
+  whatsappLink: string
+  whatsappQr: string
+  addressKMV: string
+  mapLinkKMV: string
+  addressMoscow: string
+  mapLinkMoscow: string
+  addressKrasnodar: string
+  mapLinkKrasnodar: string
 }
 
-export const mainCredentials: MainCredentialsInterface = new MainCredetials()
-
-export const contacts: Array<ContactInfo> = [
-  {
-    type: 'email',
-    value: mainCredentials.email,
-    icon: mdiEmailOutline,
-    title: 'Электронная почта'
+export const mainCredentials: MainCredentials = {
+  phone: '89199998505',
+  get normalizedPhone() {
+    return this.phone.replace(/8(\d{3})(\d{3})(\d{2})(\d{2})$/, '+7 ($1) $2-$3-$4')
   },
-  {
-    type: 'phone',
-    value: mainCredentials.phone,
-    icon: mdiEmailOutline,
-    title: 'Телефон'
-  },
-  {
-    type: 'instagramm',
-    value: mainCredentials.instagramm,
-    icon: mdiInstagram,
-    title: 'Instagramm'
-  },
-  {
-    type: 'telegram',
-    value: mainCredentials.telegram,
-    icon: telegramIcon,
-    title: 'Telegram'
-  },
-  {
-    type: 'whatsapp',
-    value: mainCredentials.whatsapp,
-    icon: mdiWhatsapp,
-    title: "Whats'up"
-  }
-]
+  addressKMV: 'Ставропольский край, Минеральные Воды, Советская улица, 61',
+  addressMoscow: 'г.Москва, Кремль',
+  addressKrasnodar: 'Краснодар, ул.Пушкина, д.Колотушкина',
+  email: 'grantik@mail.ru',
+  telegramLink: 'https://t.me/plastic_grant',
+  telegramQr: telegramQR,
+  instagrammLink: 'https://www.instagram.com/dr.grant_johnovich',
+  instagrammQr: instagrammQR,
+  whatsappLink: 'https://wa.me/79199998505',
+  whatsappQr: '',
+  mapLinkKMV:
+    'https://yandex.ru/map-widget/v1/?ll=43.126788%2C44.189063&mode=search&oid=167351408524&ol=biz&source=serp_navig&z=15.01',
+  mapLinkKrasnodar:
+    'https://yandex.ru/map-widget/v1/?ll=43.126788%2C44.189063&mode=search&oid=167351408524&ol=biz&source=serp_navig&z=15.01',
+  mapLinkMoscow:
+    'https://yandex.ru/map-widget/v1/?ll=43.126788%2C44.189063&mode=search&oid=167351408524&ol=biz&source=serp_navig&z=15.01'
+}

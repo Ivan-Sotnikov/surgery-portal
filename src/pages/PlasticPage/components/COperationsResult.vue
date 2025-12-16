@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import resultImage from './assets/60_resized.jpg'
+import resultImage from './assets/60_resized.jpeg'
 const { smAndDown } = useDisplay()
 import { mdiArrowRight } from '@mdi/js'
 </script>

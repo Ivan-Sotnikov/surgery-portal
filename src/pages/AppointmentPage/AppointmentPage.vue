@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import appointmentImage from './assets/69_resized.jpg'
+import appointmentImage from './assets/69_resized.jpeg'
 import type { VBtn } from 'vuetify/components'
 import { mdiAlertCircleOutline, mdiCheck } from '@mdi/js'
 

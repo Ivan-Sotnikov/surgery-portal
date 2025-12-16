@@ -1,5 +1,5 @@
 import { type InformationCardContent } from '@/components/CInformationCard/CInformationCard.vue'
-import portfolioImage1 from '@/pages/PlasticPage/PlasticBodyPage/assets/29_resized.jpg'
+import portfolioImage1 from '@/pages/PlasticPage/PlasticBodyPage/assets/29_resized.jpeg'
 import porfolioVideo1 from '../assets/v05.mp4'
 import type { SliderItem } from '@/types'
 
@@ -7,7 +7,7 @@ import { sliderContent as sliderContentBody } from '@/pages/PlasticPage/PlasticB
 import { sliderContent as sliderContentFace } from '@/pages/PlasticPage/PlasticFacePage/constants'
 import { sliderContent as sliderContentMammo } from '@/pages/PlasticPage/PlasticMamoPage/constants'
 
-import feedbackImage1 from '../assets/feedback1.jpg'
+import feedbackImage1 from '../assets/feedback1.jpeg'
 import feedbackVideo2 from '../assets/feedback2.mp4'
 import feedbackVideo3 from '../assets/feedback3.mp4'
 import feedbackVideo4 from '../assets/feedback4.mp4'

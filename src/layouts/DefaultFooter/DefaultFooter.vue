@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { contacts } from '@/constants'
+import { mdiClose, mdiInstagram, mdiWhatsapp } from '@mdi/js'
+import telegramIcon from './assets/telegram_logo.ts'
 import type { RouteLocationRaw } from 'vue-router'
 import { useTheme } from 'vuetify'
 import { mainCredentials } from '@/constants'
@@ -7,10 +8,6 @@ import { mainCredentials } from '@/constants'
 const { global: themeGlobal } = useTheme()
 
 const display = useDisplay()
-
-const contactsArr = contacts.filter(
-  item => item.type == 'instagramm' || item.type == 'telegram' || item.type == 'vk' || item.type == 'whatsapp'
-)
 
 interface MenuLink {
   to: RouteLocationRaw
@@ -34,6 +31,9 @@ const menuLinks: Array<Array<MenuLink>> = [
     { title: 'Контакты', to: { name: 'contacts' } }
   ]
 ]
+
+const isQrModalOpen = ref(false)
+const currentQr = ref<string | undefined>()
 
 const textColor = computed(() => (themeGlobal.name.value == 'light' ? 'text-black' : 'text-white'))
 </script>
@@ -62,7 +62,28 @@ const textColor = computed(() => (themeGlobal.name.value == 'light' ? 'text-blac
         :text="mainCredentials.email"
       />
       <div class="d-flex order-3 order-md-2 mt-2 mt-md-0">
-        <VBtn v-for="(item, key) in contactsArr" :key="key" :icon="item.icon" class="mx-2" />
+        <template v-if="display.smAndUp.value">
+          <VBtn
+            :icon="mdiInstagram"
+            class="mx-2"
+            @click="((currentQr = mainCredentials.instagrammQr), (isQrModalOpen = true))"
+          />
+          <VBtn
+            :icon="mdiWhatsapp"
+            class="mx-2"
+            @click="((currentQr = mainCredentials.whatsappQr), (isQrModalOpen = true))"
+          />
+          <VBtn
+            :icon="telegramIcon"
+            class="mx-2"
+            @click="((currentQr = mainCredentials.telegramQr), (isQrModalOpen = true))"
+          />
+        </template>
+        <template v-else>
+          <VBtn :icon="mdiInstagram" class="mx-2" :href="mainCredentials.instagrammLink" target="_blank" />
+          <VBtn :icon="mdiWhatsapp" class="mx-2" :href="mainCredentials.whatsappLink" target="_blank" />
+          <VBtn :icon="telegramIcon" class="mx-2" :href="mainCredentials.telegramLink" target="_blank" />
+        </template>
       </div>
       <VBtn
         :href="`tel:${mainCredentials.phone}`"
@@ -73,5 +94,9 @@ const textColor = computed(() => (themeGlobal.name.value == 'light' ? 'text-blac
       />
     </div>
     <div style="position: absolute; bottom: 10px; right: 10px">© 2025</div>
+    <VDialog v-model="isQrModalOpen" class="d-flex">
+      <VImg width="300px" class="rounded-xl mx-auto" :src="currentQr" />
+      <VBtn :icon="mdiClose"></VBtn>
+    </VDialog>
   </VFooter>
 </template>

@@ -1,6 +1,6 @@
 import type { InformationCardContent } from '@/components/CInformationCard/CInformationCard.vue'
-import bodyImage1 from '@/pages/PlasticPage/PlasticBodyPage/assets/29_resized.jpg'
-import bodyImage2 from '@/pages/PlasticPage/PlasticBodyPage/assets/85_resized.jpg'
+import bodyImage1 from '@/pages/PlasticPage/PlasticBodyPage/assets/29_resized.jpeg'
+import bodyImage2 from '@/pages/PlasticPage/PlasticBodyPage/assets/85_resized.jpeg'
 import bodyVideo1 from '@/pages/PlasticPage/PlasticBodyPage/assets/body1.mp4'
 import bodyVideo2 from '@/pages/PlasticPage/PlasticBodyPage/assets/body2.mp4'
 import bodyVideo3 from '@/pages/PlasticPage/PlasticBodyPage/assets/body3.mp4'

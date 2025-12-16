@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useTheme } from 'vuetify'
-import defaultPosterImage from './assets/defaultImage.jpg'
+import defaultPosterImage from './assets/default-image.jpeg'
 import defaultLazyImage from './assets/lazyImage.jpg'
 
 export type InformationCardContent = {

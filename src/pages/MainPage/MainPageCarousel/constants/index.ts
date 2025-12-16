@@ -1,5 +1,5 @@
-import carouselImage1 from '../../../AboutPage/assets/51_resized.jpg'
-import defaultLazyImage from '../../../../components/CInformationCard/assets/defaultImage.jpg'
+import carouselImage1 from '../../../AboutPage/assets/51_resized.jpeg'
+import defaultLazyImage from '../../../../components/CInformationCard/assets/lazyImage.jpg'
 import carouselImage2 from '../assets/carousel-image-1.jpg'
 import carouselImage3 from '../assets/carousel-image-2.jpg'
 import carouselImage4 from '../assets/carousel-image-3.jpg'

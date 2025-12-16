@@ -1,6 +1,7 @@
 import type { InformationCardContent } from '@/components/CInformationCard/CInformationCard.vue'
 import mammoCardVideo1 from '@/pages/PlasticPage/PlasticMamoPage/assets/v01.mp4'
-import mammoImage1 from '@/pages/PlasticPage/PlasticMamoPage/assets/63_resized.jpg'
+import mammoImage1 from '@/pages/PlasticPage/PlasticMamoPage/assets/63_resized.jpeg'
+import mammoImage2 from '@/pages/PlasticPage/PlasticMamoPage/assets/70_resized.jpeg'
 import mammoVideo15 from '@/pages/PlasticPage/PlasticMamoPage/assets/mammo1.mp4'
 import mammoVideo2 from '@/pages/PlasticPage/PlasticMamoPage/assets/mammo2.mp4'
 import mammoVideo3 from '@/pages/PlasticPage/PlasticMamoPage/assets/mammo3.mp4'
@@ -35,10 +36,12 @@ export const cardsContentArray: Array<InformationCardContent> = [
 ]
 
 export const sliderContent: Array<SliderItem> = [
+  { image: mammoImage2 },
   { image: mammoImage1, video: mammoVideo1 },
   { image: mammoImage1, video: mammoVideo2 },
   { image: mammoImage1, video: mammoVideo3 },
   { image: mammoImage1, video: mammoVideo4 },
+  { image: mammoImage1 },
   { image: mammoImage1, video: mammoVideo5 },
   { image: mammoImage1, video: mammoVideo6 },
   { image: mammoImage1, video: mammoVideo7 },
