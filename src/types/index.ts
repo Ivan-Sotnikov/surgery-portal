@@ -28,3 +28,9 @@ export interface MainCredentialsInterface {
   addressMoscow: string
   addressKrasnodar: string
 }
+
+export interface SliderItem {
+  image: string
+  video?: string
+  alt?: string
+}

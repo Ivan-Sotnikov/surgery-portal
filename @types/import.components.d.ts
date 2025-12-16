@@ -13,6 +13,7 @@ declare module 'vue' {
     CFrequentlyAskedQuestions: typeof import('./../src/components/CFrequentlyAskedQuestions/CFrequentlyAskedQuestions.vue')['default']
     CInformationCard: typeof import('./../src/components/CInformationCard/CInformationCard.vue')['default']
     ContactsPage: typeof import('./../src/pages/ContactsPage/ContactsPage.vue')['default']
+    COperationsResult: typeof import('./../src/pages/PlasticPage/components/COperationsResult.vue')['default']
     DefaultFooter: typeof import('./../src/layouts/DefaultFooter/DefaultFooter.vue')['default']
     DefaultLayout: typeof import('./../src/layouts/DefaultLayout/DefaultLayout.vue')['default']
     MainPage: typeof import('./../src/pages/MainPage/MainPage.vue')['default']

@@ -26,9 +26,8 @@ const navBarButtonsWidth = computed(() => {
     case 'md':
       return 'w-100'
     case 'xl':
-      return 'w-75'
     case 'xxl':
-      return 'w-50'
+      return 'w-75'
     default:
       return 'w-100'
   }
@@ -55,7 +54,7 @@ const isToUpButtonVisible = computed(() => display.smAndDown.value && currentScr
   <VAppBar color="secondary">
     <template v-if="display.lgAndUp.value">
       <div class="w-100 d-flex justify-center">
-        <div class="d-flex justify-space-around align-center px-10" :class="navBarButtonsWidth">
+        <div class="d-flex justify-space-around align-center" :class="navBarButtonsWidth">
           <template v-for="(button, key) in navBarButtons" :key="key">
             <template v-if="button.isMenu">
               <VMenu open-on-hover>
@@ -66,6 +65,7 @@ const isToUpButtonVisible = computed(() => display.smAndDown.value && currentScr
                     :append-icon="mdiChevronDown"
                     variant="plain"
                     @click="$router.push({ name: button.name })"
+                    :size="display.xlAndUp.value ? 'x-large' : 'large'"
                   />
                 </template>
                 <VList>
@@ -75,7 +75,13 @@ const isToUpButtonVisible = computed(() => display.smAndDown.value && currentScr
                 </VList>
               </VMenu>
             </template>
-            <VBtn v-else :to="{ name: button.name }" :text="button.title" variant="plain" />
+            <VBtn
+              v-else
+              :to="{ name: button.name }"
+              :text="button.title"
+              variant="plain"
+              :size="display.xlAndUp.value ? 'x-large' : 'large'"
+            />
             <VDivider vertical v-if="key != navBarButtons.length - 1" />
           </template>
         </div>
@@ -105,11 +111,18 @@ const isToUpButtonVisible = computed(() => display.smAndDown.value && currentScr
           <template v-slot:default="{ isActive }">
             <VList max-width="300" class="justify-end">
               <VListItem v-for="(mobileButton, key) in navBarButtons" :key="key" class="justify-end">
-                <VListGroup v-if="mobileButton.isMenu" color="red">
-                  <template v-slot:activator="{ props }">
-                    <VBtn block :text="mobileButton.title" v-bind="props" variant="plain" class="d-flex justify-end" />
+                <VListGroup v-if="mobileButton.isMenu">
+                  <template v-slot:activator="{ props, isOpen }">
+                    <VBtn
+                      block
+                      :text="mobileButton.title"
+                      v-bind="props"
+                      :append-icon="isOpen ? mdiChevronUp : mdiChevronDown"
+                      variant="plain"
+                      class="d-flex justify-end"
+                    />
                   </template>
-                  <div class="bg-grey-lighten-4 rounded-lg">
+                  <div class="bg-secondary rounded-lg">
                     <VBtn
                       @click="
                         async () => {
@@ -157,11 +170,13 @@ const isToUpButtonVisible = computed(() => display.smAndDown.value && currentScr
     </template>
   </VAppBar>
   <VMain class="bg-primary">
-    <slot />
+    <VSheet max-width="1980" class="mx-auto bg-transparent">
+      <slot />
+    </VSheet>
     <VBtn
       :icon="mdiChevronUp"
       position="fixed"
-      style="bottom: 20px; left: 20px; z-index: 1"
+      style="bottom: 20px; left: 20px; z-index: 10"
       v-if="isToUpButtonVisible"
       @click="goTo(0, { duration: 500 })"
     />

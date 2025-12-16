@@ -10,13 +10,12 @@ const display = useDisplay()
       direction="vertical"
       size="x-large"
       align="start"
-      justify="start"
       truncate-line="both"
       :side="display.smAndDown.value ? 'end' : undefined"
     >
       <VTimelineItem class="text-md-start">
-        <div class="text-h6 text-md-h4 mb-3 mb-md-6">Запись на консультацию</div>
-        <div class="text-md-h6">
+        <div class="text-h6 text-md-h4 mb-3 mb-md-6 font-italic">Запись на консультацию</div>
+        <div class="text-md-h5">
           Вы ознакомились с моими работами, фотографиями до/после, и решили записаться на консультацию.
           <br />
           Для этого Вам необходимо перейти к
@@ -29,8 +28,8 @@ const display = useDisplay()
         </template>
       </VTimelineItem>
       <VTimelineItem :class="display.mdAndUp.value ? 'text-md-end' : 'text-md-start'">
-        <div class="text-h6 text-md-h4 mb-3 mb-md-6">Консультация</div>
-        <div class="text-md-h6">
+        <div class="text-h6 text-md-h4 mb-3 mb-md-6 font-italic">Консультация</div>
+        <div class="text-md-h5">
           На первой консультации выстраиваются доверительные отношения между пациентом и хирургом, поэтому это одна из
           самых важных встреч.<br />
           Советую перед консультацией подготовить список вопросов, которые Вы хотели бы задать мне, подготовить
@@ -46,8 +45,8 @@ const display = useDisplay()
         </template>
       </VTimelineItem>
       <VTimelineItem class="text-md-start">
-        <div class="text-h6 text-md-h4 mb-3 mb-md-6">Подготовка к операции</div>
-        <div class="text-md-h6">
+        <div class="text-h6 text-md-h4 mb-3 mb-md-6 font-italic">Подготовка к операции</div>
+        <div class="text-md-h5">
           На консультации я дам список анализов, которые необходимо сдать перед операцией. Возможно, потребуются так же
           дополнительные обследования в зависимости от состояния Вашего здоровья.
           <br />
@@ -59,8 +58,8 @@ const display = useDisplay()
         </template>
       </VTimelineItem>
       <VTimelineItem :class="display.mdAndUp.value ? 'text-md-end' : 'text-md-start'">
-        <div class="text-h6 text-md-h4 mb-3 mb-md-6">Операция</div>
-        <div class="text-md-h6">
+        <div class="text-h6 text-md-h4 mb-3 mb-md-6 font-italic">Операция</div>
+        <div class="text-md-h5">
           В день операции мы с Вами встретимся, я снова отвечу на все Ваши вопросы.
           <br />
           После Вы подписываете согласие на операцию, выполняется разметка и фотофиксация.
@@ -73,12 +72,12 @@ const display = useDisplay()
           болей, тошноты и рвоты. Анестезиолог находится рядом с Вами в течение всей анестезии.
         </div>
         <template #icon>
-          <div class="text-primary font-weight-bold">4</div>
+          <div class="text-primary font-weight-bold font-italic">4</div>
         </template>
       </VTimelineItem>
       <VTimelineItem class="text-md-start">
-        <div class="text-h6 text-md-h4 mb-3 mb-md-6">Реабилитация</div>
-        <div class="text-md-h6">
+        <div class="text-h6 text-md-h4 mb-3 mb-md-6 font-italic">Реабилитация</div>
+        <div class="text-md-h5">
           После операции Вас переведут в палату, где Вы будете постоянно под моим наблюдением и наблюдением персонала.
           <br />
           На следующий день мы проводим перевязку, назначим дату повторного осмотра и дам все необходимые рекомендации.

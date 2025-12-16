@@ -16,7 +16,7 @@ defineProps({
 </script>
 
 <template>
-  <VExpansionPanels rounded="lg">
+  <VExpansionPanels rounded="xl">
     <VExpansionPanel v-for="(item, key) in questions" :key="key">
       <template #title>
         <div class="text-md-h6 font-weight-bold">{{ item.question }}</div>

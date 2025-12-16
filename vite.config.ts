@@ -50,7 +50,7 @@ export default defineConfig(config => {
         registerType: 'autoUpdate',
         strategies: 'generateSW'
       }),
-      vuetify({ autoImport: true }),
+      vuetify({ autoImport: true, styles: { configFile: './src/settings/settings.scss' } }),
       Components({
         dts: '@types/import.components.d.ts',
         // NOTE: _ служит для определения дочерних компонент, не для общего использования

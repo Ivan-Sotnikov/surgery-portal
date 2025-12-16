@@ -8,18 +8,17 @@ const display = useDisplay()
 
 <template>
   <div>
-    <template v-if="display.mdAndUp.value">
-      <div class="d-flex justify-space-between mt-5">
-        <VBtn
-          v-for="(button, key) in navButtons"
-          :key="key"
-          :to="{ name: button.name }"
-          :text="button.title"
-          variant="text"
-        />
-      </div>
-      <VDivider />
-    </template>
+    <div class="d-flex flex-column flex-md-row justify-space-between mt-md-5">
+      <VBtn
+        v-for="(button, key) in navButtons"
+        :key="key"
+        :to="{ name: button.name }"
+        :text="button.title"
+        variant="text"
+        :size="display.lgAndUp.value ? 'large' : 'small'"
+      />
+    </div>
+    <VDivider />
     <RouterView v-slot="{ Component }">
       <Transition name="fade" appear mode="out-in">
         <component :is="Component" />
@@ -32,7 +31,7 @@ const display = useDisplay()
       variant="outlined"
       :to="{ name: 'appointment' }"
       rounded="pill"
-      class="mt-5"
+      class="mt-10"
     />
   </div>
 </template>

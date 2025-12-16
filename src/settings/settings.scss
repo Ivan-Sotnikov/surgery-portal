@@ -1,0 +1,98 @@
+@forward 'vuetify/settings' with (
+  $body-font-family: var(--v-font-family),
+  $heading-font-family: var(--v-font-family),
+  $font-weights: (
+    'medium': 500,
+    'semi-bold': 600,
+    'extra-bold': 800
+  ),
+  $button-elevation: (
+    'default': 0,
+    'hover': 2,
+    'active': 4
+  ),
+  $typography: (
+    'h1': (
+      'letter-spacing': var(--v-letter-spacing, -0.015em),
+      'font-family': var(--v-font-family)
+    ),
+    'h2': (
+      'letter-spacing': var(--v-letter-spacing, -0.005em),
+      'font-family': var(--v-font-family)
+    ),
+    'h3': (
+      'letter-spacing': var(--v-letter-spacing, normal),
+      'font-family': var(--v-font-family)
+    ),
+    'h4': (
+      'letter-spacing': var(--v-letter-spacing, 0.002em),
+      'font-size': 1rem
+    ),
+    'h5': (
+      'letter-spacing': var(--v-letter-spacing, normal),
+      'font-family': var(--v-font-family)
+    ),
+    'h6': (
+      'letter-spacing': var(--v-letter-spacing, 0.002em),
+      'weight': normal,
+      'font-family': var(--v-font-family)
+    ),
+    'subtitle-1': (
+      'size': 1.125rem,
+      'line-height': 1.333,
+      'letter-spacing': var(--v-letter-spacing, 0.002em),
+      'font-family': var(--v-font-family)
+    ),
+    'subtitle-2': (
+      'size': 1rem,
+      'line-height': 1.5,
+      'weight': normal,
+      'letter-spacing': var(--v-letter-spacing, 0.002em),
+      'font-family': var(--v-font-family)
+    ),
+    'subtitle-3': (
+      'size': 0.875rem,
+      'weight': normal,
+      'line-height': 1.571,
+      'letter-spacing': var(--v-letter-spacing, 0.001em),
+      'font-family': var(--v-font-family),
+      'text-transform': none
+    ),
+    'body-1': (
+      'size': 1.125rem,
+      'line-height': 1.333,
+      'letter-spacing': var(--v-letter-spacing, normal)
+    ),
+    'body-2': (
+      'size': 1rem,
+      'line-height': 1.5,
+      'letter-spacing': var(--v-letter-spacing, 0.005em),
+      'font-family': var(--v-font-family)
+    ),
+    'body-3': (
+      'size': 0.875rem,
+      'weight': normal,
+      'line-height': 1.429,
+      'letter-spacing': var(--v-letter-spacing, 0.002em),
+      'font-family': var(--v-font-family),
+      'text-transform': none
+    ),
+    'button': (
+      'size': 0.875rem,
+      'weight': 500,
+      'line-height': 2.571,
+      'letter-spacing': var(--v-letter-spacing, 0.015em),
+      'font-family': var(--v-font-family)
+    ),
+    'caption': (
+      'letter-spacing': var(--v-letter-spacing, 0.004em),
+      'font-family': var(--v-font-family)
+    ),
+    'overline': (
+      'weight': normal,
+      'font-family': var(--v-font-family),
+      'letter-spacing': var(--v-letter-spacing, 0.02em),
+      'text-transform': none
+    )
+  )
+);
